@@ -5,12 +5,11 @@ const session = localStorage.getItem("session");
 checkLogged();
 
 //LOGAR NO SISTEMA
-document.getElementById("login-form").addEventListener("submit", function(e) {
+document.getElementById("login-form").addEventListener('submit', function(e) {
     e.preventDefault();
-
     const email = document.getElementById("email-input").value;
     const password = document.getElementById("password-input").value;
-    const session = document.getElementById("session-check").checked;
+    const checksession = document.getElementById("session-check").checked;
 
     const account = getAccount(email);
 
@@ -25,14 +24,14 @@ document.getElementById("login-form").addEventListener("submit", function(e) {
         return; 
         }
 
-        saveSession(email,session);
+        saveSession(email, checksession);
 
         window.location.href = "home.html";
     }
 });
 
 //CRIAR CONTA
-document.getElementById("create-form").addEventListener("submit", function(e) {
+document.getElementById("create-form").addEventListener('submit', function(e) {
     e.preventDefault();
 
     const email = document.getElementById("email-create-input").value;
@@ -68,7 +67,7 @@ function checkLogged() {
     if(logged) {
         saveSession(logged, session);
 
-        window.location,href = "home.html";
+        window.location.href = "home.html";
     }
 }
 
