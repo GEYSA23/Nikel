@@ -1,5 +1,5 @@
 const myModal = new bootstrap.Modal("#register-modal");
-let logged = sessionStorage.getItem("loggend");
+let logged = sessionStorage.getItem("logged");
 const session = localStorage.getItem("session");
 
 checkLogged();
@@ -21,7 +21,7 @@ document.getElementById("login-form").addEventListener('submit', function(e) {
     if(account) {
         if(account.password !== password) {
             alert("Opps! Verifique o usuario ou senha.");
-        return; 
+            return; 
         }
 
         saveSession(email, checksession);
